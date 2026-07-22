@@ -19,11 +19,14 @@ export interface Business {
 }
 
 export interface BusinessSettings {
+  chatbot_name?: string;
   chatbot_greeting?: string;
   qualification_questions?: string[];
   brand_color?: string;
+  logo_url?: string;
   business_hours?: string;
   contact_info?: string;
+  contact_email?: string;
   welcome_message?: string;
 }
 
