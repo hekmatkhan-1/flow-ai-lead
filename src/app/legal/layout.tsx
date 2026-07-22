@@ -37,9 +37,9 @@ export default function LegalLayout({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      {/* Page content */}
+      {/* Page content — prose-like manual styling */}
       <main className="flex-1 px-4 py-12 sm:px-6 lg:py-16">
-        <div className="prose prose-gray mx-auto max-w-3xl dark:prose-invert">
+        <div className="legal-content mx-auto max-w-3xl text-gray-700 dark:text-gray-300">
           {children}
         </div>
       </main>
