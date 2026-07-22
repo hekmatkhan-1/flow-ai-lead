@@ -188,6 +188,18 @@ function widgetCSS(): string {
 #lf-chat-send:disabled { opacity:0.5; cursor:default; }
 #lf-chat-send svg { width:18px; height:18px; }
 
+/* Legal footer */
+#lf-chat-legal {
+  flex-shrink:0; padding:6px 14px;
+  text-align:center; font-size:10px; color:#9ca3af;
+  border-top:1px solid #f3f4f6; background:#fff;
+}
+#lf-chat-legal a {
+  color:#9ca3af; text-decoration:none; transition:color 0.15s;
+}
+#lf-chat-legal a:hover { color:#6b7280; }
+#lf-chat-legal span { margin:0 3px; }
+
 /* Mobile */
 @media (max-width:480px) {
   #lf-chat-window { width:100%; height:100%; max-height:100vh; bottom:0; right:0; border-radius:0; }
@@ -202,6 +214,7 @@ function widgetCSS(): string {
   #lf-chat-input-area { background:#1e1e2e; border-color:#2d2d3f; }
   #lf-chat-input { background:#2d2d3f; border-color:#3d3d5c; color:#e5e7eb; }
   #lf-typing-indicator { background:#2d2d3f; }
+  #lf-chat-legal { background:#1e1e2e; border-color:#2d2d3f; }
 }
 `.trim();
 }
@@ -441,9 +454,18 @@ function widgetJS(bid: string, preSettings: WidgetSettings): string {
       })
     ]);
 
+    // Legal footer
+    var origin = window.location.origin || 'https://leadflow.ai';
+    var legalFooter = el('div', { id: 'lf-chat-legal', innerHTML:
+      '<a href=\"' + origin + '/legal/privacy\" target=\"_blank\" rel=\"noopener\">Privacy</a>' +
+      '<span>·</span>' +
+      '<a href=\"' + origin + '/legal/terms\" target=\"_blank\" rel=\"noopener\">Terms</a>'
+    });
+
     win.appendChild(header);
     win.appendChild(messages);
     win.appendChild(inputArea);
+    win.appendChild(legalFooter);
     container.appendChild(bubble);
     container.appendChild(win);
 

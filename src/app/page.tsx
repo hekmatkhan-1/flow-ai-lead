@@ -342,35 +342,27 @@ export default function LandingPage() {
       </section>
 
       {/* ---------- Footer ---------- */}
-      <footer className="border-t border-gray-200 bg-white py-12 dark:border-gray-800 dark:bg-gray-950">
+      <footer className="bg-gray-900 py-8 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 text-xs font-bold text-white">
-                LF
-              </div>
-              <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                LeadFlow AI
-              </span>
-            </div>
-            <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-400">
+              &copy; 2026 LeadFlow AI. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4 text-sm text-gray-400">
               <Link
-                href="/login"
-                className="transition-colors hover:text-gray-900 dark:hover:text-gray-200"
+                href="/legal/privacy"
+                className="transition-colors hover:text-white"
               >
-                Sign in
+                Privacy Policy
               </Link>
               <Link
-                href="/signup"
-                className="transition-colors hover:text-gray-900 dark:hover:text-gray-200"
+                href="/legal/terms"
+                className="transition-colors hover:text-white"
               >
-                Sign up
+                Terms of Service
               </Link>
             </div>
           </div>
-          <p className="mt-8 text-center text-xs text-gray-400 dark:text-gray-500">
-            &copy; {new Date().getFullYear()} LeadFlow AI. All rights reserved.
-          </p>
         </div>
       </footer>
     </div>
